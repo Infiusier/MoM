@@ -101,7 +101,7 @@ border-radius: 5px;
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="mqtt_broker_line_input">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -114,6 +114,9 @@ border-radius: 5px;
            <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 10px;
 </string>
+          </property>
+          <property name="text">
+           <string>broker.hivemq.com</string>
           </property>
          </widget>
          <widget class="QLabel" name="label_3">
@@ -170,7 +173,7 @@ border-radius: 10px;
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QSpinBox" name="spinBox">
+         <widget class="QSpinBox" name="mqtt_port_line_input">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -186,6 +189,12 @@ border-radius: 10px;
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="maximum">
+           <number>10000</number>
+          </property>
+          <property name="value">
+           <number>1883</number>
           </property>
          </widget>
         </widget>
@@ -220,7 +229,7 @@ border-radius: 10px;
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_3">
+         <widget class="QLineEdit" name="discover_topic_line_input">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -233,6 +242,9 @@ border-radius: 10px;
            <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 10px;
 </string>
+          </property>
+          <property name="text">
+           <string>MoM Discover</string>
           </property>
          </widget>
         </widget>
@@ -267,7 +279,7 @@ border-radius: 10px;
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_5">
+         <widget class="QLineEdit" name="temperature_topic_line_input">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -280,6 +292,9 @@ border-radius: 10px;
            <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 10px;
 </string>
+          </property>
+          <property name="text">
+           <string>MoM Temperature</string>
           </property>
          </widget>
         </widget>
@@ -314,7 +329,7 @@ border-radius: 10px;
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_6">
+         <widget class="QLineEdit" name="humidity_topic_line_input">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -327,6 +342,9 @@ border-radius: 10px;
            <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 10px;
 </string>
+          </property>
+          <property name="text">
+           <string>MoM Humidity</string>
           </property>
          </widget>
         </widget>
@@ -361,7 +379,7 @@ border-radius: 10px;
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
-         <widget class="QLineEdit" name="lineEdit_4">
+         <widget class="QLineEdit" name="speed_topic_line_input">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -374,6 +392,9 @@ border-radius: 10px;
            <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 10px;
 </string>
+          </property>
+          <property name="text">
+           <string>MoM Speed</string>
           </property>
          </widget>
         </widget>
@@ -402,7 +423,7 @@ border-radius: 10px;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="begin_button">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -479,7 +500,7 @@ border-radius: 5px;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="sensor_type_combobox">
       <property name="geometry">
        <rect>
         <x>109</x>
@@ -535,7 +556,7 @@ border-radius: 10px;
        <string>Name:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="sensor_name_line_input">
       <property name="geometry">
        <rect>
         <x>109</x>
@@ -563,7 +584,7 @@ border-radius: 8px;
        <string>Current Value:</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBox_2">
+     <widget class="QSpinBox" name="current_value_input">
       <property name="geometry">
        <rect>
         <x>109</x>
@@ -580,6 +601,9 @@ border-radius: 8px;
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="maximum">
+       <number>1000</number>
+      </property>
      </widget>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
@@ -594,7 +618,7 @@ border-radius: 8px;
        <string>Max Value:</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBox_3">
+     <widget class="QSpinBox" name="max_value_input">
       <property name="geometry">
        <rect>
         <x>109</x>
@@ -610,6 +634,9 @@ border-radius: 8px;
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="maximum">
+       <number>1000</number>
       </property>
      </widget>
      <widget class="QLabel" name="label_14">
@@ -625,7 +652,7 @@ border-radius: 8px;
        <string>Min Value:</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBox_4">
+     <widget class="QSpinBox" name="min_value_input">
       <property name="geometry">
        <rect>
         <x>109</x>
@@ -642,8 +669,11 @@ border-radius: 8px;
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="maximum">
+       <number>1000</number>
+      </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="create_button">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -734,7 +764,7 @@ border-radius: 5px;
        <string>Sensor Name:</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="sensor_name_combobox">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -748,8 +778,13 @@ border-radius: 5px;
 border-radius: 10px;
 </string>
       </property>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
      </widget>
-     <widget class="QSpinBox" name="spinBox_5">
+     <widget class="QSpinBox" name="sensor_value_input">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -766,6 +801,9 @@ border-radius: 8px;
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="maximum">
+       <number>1000</number>
+      </property>
      </widget>
      <widget class="QLabel" name="label_17">
       <property name="geometry">
@@ -780,10 +818,10 @@ border-radius: 8px;
        <string>Current Value:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="delete_button">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>180</x>
         <y>100</y>
         <width>75</width>
         <height>23</height>
@@ -811,6 +849,39 @@ color: black;
       </property>
       <property name="text">
        <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ok_button">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+border-radius:5px;
+background-color: #ebc000;
+}
+
+QPushButton:hover{
+border-radius:5px;
+background-color: #605e5e;
+border: 1px solid black;
+color: white;
+}
+
+QPushButton:pressed{
+border-radius:5px;
+background-color: #ebc000;
+border: 1px solid black;
+color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string>OK</string>
       </property>
      </widget>
     </widget>
