@@ -714,7 +714,7 @@ color: black;
        <x>310</x>
        <y>310</y>
        <width>261</width>
-       <height>131</height>
+       <height>171</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -822,7 +822,7 @@ border-radius: 8px;
       <property name="geometry">
        <rect>
         <x>180</x>
-        <y>100</y>
+        <y>140</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -855,7 +855,7 @@ color: black;
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>140</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -882,6 +882,74 @@ color: black;
       </property>
       <property name="text">
        <string>OK</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Max Value:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>100</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Min Value:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="max_value_label">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>100</y>
+        <width>47</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="min_value_label">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>100</y>
+        <width>47</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>

@@ -287,7 +287,7 @@ class Ui_MainWindow(object):
 "}")
         self.frame_10 = QFrame(self.frame)
         self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setGeometry(QRect(310, 310, 261, 131))
+        self.frame_10.setGeometry(QRect(310, 310, 261, 171))
         self.frame_10.setStyleSheet(u"background-color: rgb(196, 196, 196);\n"
 "border-radius: 5px;\n"
 "\n"
@@ -322,7 +322,7 @@ class Ui_MainWindow(object):
         self.label_17.setGeometry(QRect(11, 70, 75, 16))
         self.delete_button = QPushButton(self.frame_10)
         self.delete_button.setObjectName(u"delete_button")
-        self.delete_button.setGeometry(QRect(180, 100, 75, 23))
+        self.delete_button.setGeometry(QRect(180, 140, 75, 23))
         self.delete_button.setStyleSheet(u"QPushButton{\n"
 "border-radius:5px;\n"
 "background-color: red;\n"
@@ -343,7 +343,7 @@ class Ui_MainWindow(object):
 "}")
         self.ok_button = QPushButton(self.frame_10)
         self.ok_button.setObjectName(u"ok_button")
-        self.ok_button.setGeometry(QRect(10, 100, 75, 23))
+        self.ok_button.setGeometry(QRect(10, 140, 75, 23))
         self.ok_button.setStyleSheet(u"QPushButton{\n"
 "border-radius:5px;\n"
 "background-color: #ebc000;\n"
@@ -362,6 +362,26 @@ class Ui_MainWindow(object):
 "border: 1px solid black;\n"
 "color: black;\n"
 "}")
+        self.label_19 = QLabel(self.frame_10)
+        self.label_19.setObjectName(u"label_19")
+        self.label_19.setGeometry(QRect(10, 100, 71, 16))
+        self.label_20 = QLabel(self.frame_10)
+        self.label_20.setObjectName(u"label_20")
+        self.label_20.setGeometry(QRect(130, 100, 71, 16))
+        self.max_value_label = QLabel(self.frame_10)
+        self.max_value_label.setObjectName(u"max_value_label")
+        self.max_value_label.setGeometry(QRect(70, 100, 47, 20))
+        self.max_value_label.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"")
+        self.max_value_label.setAlignment(Qt.AlignCenter)
+        self.min_value_label = QLabel(self.frame_10)
+        self.min_value_label.setObjectName(u"min_value_label")
+        self.min_value_label.setGeometry(QRect(190, 100, 47, 20))
+        self.min_value_label.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"")
+        self.min_value_label.setAlignment(Qt.AlignCenter)
         self.label_18 = QLabel(self.frame)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setGeometry(QRect(0, 0, 800, 20))
@@ -407,6 +427,10 @@ class Ui_MainWindow(object):
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"Current Value:", None))
         self.delete_button.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
         self.ok_button.setText(QCoreApplication.translate("MainWindow", u"OK", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Max Value:", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Min Value:", None))
+        self.max_value_label.setText("")
+        self.min_value_label.setText("")
         self.label_18.setText("")
     # retranslateUi
 

@@ -24,26 +24,14 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow,QtCore.QObject):
         self.create_button.clicked.connect(self.init_sensor)
         self.ok_button.clicked.connect(self.edit_sensor)
         self.delete_button.clicked.connect(self.delete_sensor)
-            
+        self.sensor_name_combobox.currentIndexChanged.connect(self.display_sensor_info)
 #--------------------------------------------------- PREPARE SCREENS ------------------------------------------------------
     def prepare_initial_screen(self):
         self.frame_9.setEnabled(False)
         self.frame_10.setEnabled(False)
 
 #---------------------------------------------------BEGIN TESTS CALLBACKS---------------------------------------------------
-    
-    def init_application_inputs(self):
-         
-        self.app_thread.key_manager_server_user = self.key_manager_user_input.text()
-        self.app_thread.key_manager_server_pwd = self.key_manager_pwd_input.text()
-        self.app_thread.key_manager_server_url = self.key_manager_url_input.text()
-         
-        self.app_thread.device = self.device_selection_combobox.currentText()
-         
-        self.app_thread.qr_code_board = self.qr_board_label.text()
-        self.app_thread.qr_code_box = self.qr_box_label.text()
 
-        
     def init_application(self):
         self.frame_2.setEnabled(False)
         self.frame_9.setEnabled(True)
@@ -85,6 +73,22 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow,QtCore.QObject):
         self.sensor_name_line_input.clear()
         self.sensor_name_combobox.addItem(sensor_name)
         
+    def display_sensor_info(self):
+        if self.sensor_name_combobox.currentText() == '':
+            self.max_value_label.setText("")
+            self.min_value_label.setText("")
+            self.sensor_value_input.setValue(0)
+            return
+        
+        sensor_name = self.sensor_name_combobox.currentText()
+        max_value = self.list_of_sensors[sensor_name].max_value
+        min_value = self.list_of_sensors[sensor_name].min_value
+        current_value = self.list_of_sensors[sensor_name].current_value
+        
+        self.max_value_label.setText(str(max_value))
+        self.min_value_label.setText(str(min_value))
+        self.sensor_value_input.setValue(current_value)
+        
     def edit_sensor(self):
         if self.sensor_name_combobox.currentText() == '':
             return
@@ -93,7 +97,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow,QtCore.QObject):
         self.list_of_sensors[sensor_name].current_value = self.sensor_value_input.value()
         
         self.sensor_name_combobox.setCurrentIndex(0)
-        self.sensor_value_input.setValue(0)
+        self.display_sensor_info()
         
     def delete_sensor(self):
         if self.sensor_name_combobox.currentText() == '':

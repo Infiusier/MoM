@@ -71,7 +71,7 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow,QtCore.QObject):
             self.humidity_log.append(msg)
             
         elif sensor_type == 'Speed':
-            self.sensor_log.append(msg)
+            self.speed_log.append(msg)
             
     def add_sensor_to_list(self,sensor_name):
         self.available_sensors_combobox.addItem(sensor_name)
