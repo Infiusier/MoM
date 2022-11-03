@@ -56,8 +56,8 @@ class Application():
             
     def send_discover_signal(self):
         json_payload = {}
-        json_payload['sensor_type'] = self.sensor_type
-        json_payload['sensor_name'] = self.sensor_name
+        json_payload["sensor_type"] = self.sensor_type
+        json_payload["sensor_name"] = self.sensor_name
         
         str_payload = "{}".format(json_payload)
         
@@ -75,10 +75,10 @@ class Application():
             warning_msg = "Sensor bellow threshold!"    
         
         json_payload = {}
-        json_payload['sensor_name'] = self.sensor_name
-        json_payload['sensor_type'] = self.sensor_type
-        json_payload['sensor_value'] = self.current_value
-        json_payload['warning'] = warning_msg
+        json_payload["sensor_name"] = self.sensor_name
+        json_payload["sensor_type"] = self.sensor_type
+        json_payload["sensor_value"] = self.current_value
+        json_payload["warning"] = warning_msg
         
         str_payload = "{}".format(json_payload)
         
